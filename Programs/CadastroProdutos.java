@@ -1,8 +1,4 @@
-package Programs;
-
-import Entities.Products;
 import java.util.Scanner;
-
 import java.util.Locale;
 public class CadastroProdutos{
     public static void main(String[] args){
@@ -22,10 +18,17 @@ public class CadastroProdutos{
             int quantity = sc.nextInt();
             array[i] = new Products(name, price, quantity);
         }
-        for(int i = 0; i<n;i++){
+        double totalPrice = 0;
+        int totalItems = 0;
+        for (int i = 0; i < n; i++) {
             System.out.println(array[i]);
+            totalPrice += array[i].totalPrice();  // Soma o valor total dos produtos
+            totalItems += array[i].getQuantity(); // Soma a quantidade total de itens
         }
-        System.out.println("Total de itens");
+        System.out.print("\nTotal de itens:" + totalItems+ ", ");
+        System.out.printf("Valor total: R$ %.2f\n", totalPrice);
+        
+        sc.close();
         
     }
 } 

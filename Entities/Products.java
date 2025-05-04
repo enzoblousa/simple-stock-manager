@@ -1,5 +1,3 @@
-package Entities;
-
 public class Products {
     private String nameProduct;
     private Double price;
@@ -37,13 +35,13 @@ public Integer getQuantity() {
 public void setQuantity(Integer quantity) {
     this.quantity = quantity;
 }
+
 public double totalPrice(){
     return price * quantity;
 }
 
-
 public String toString() {
-    return String.format("Produto: %-15s | Quantidade: %3d | Total: R$ %.2f",
-        nameProduct, quantity, totalPrice());
+    return String.format("Quantidade de itens:%3d | Total: R$ %.2f",
+        quantity, totalPrice());
 }
 }
